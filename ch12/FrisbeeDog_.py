@@ -13,9 +13,9 @@ class Dog:
 
     def brak(self):
         if self.weight > 15:
-            print(self.name, "WOW WOW")
+            print(self.name, "says WOW WOW")
         else:
-            print(self.name, "wow wow")
+            print(self.name, "says wow wow")
 
 class FrisbeeDog(Dog):
     def __init__(self, name, age, weight):
@@ -24,7 +24,7 @@ class FrisbeeDog(Dog):
 
     def bark(self):
         if self.frisbee:
-            print("I can't bark, I have a frisbee in my mouth")
+            print(self.name, "says, I can't bark, I have a frisbee in my mouth")
         else:
             Dog.brak(self)
 
@@ -33,24 +33,22 @@ class FrisbeeDog(Dog):
 
     def give(self):
         if self.frisbee:
-            print(self.frisbee)
-        self.frisbee = None
+            print(self.name, "caught", self.frisbee)
 
     def __str__(self):
-        return "I'm a FrisbeeDog class."
+        return "I'm a dog named " + self.name
 
 # test
 def test_code():
-    dude = FrisbeeDog("Dude", 5, 20)
-    blue_frisbee = Frisbee("Blue")
+    dude = FrisbeeDog("Dude", 5, 11)
+    blue_frisbee = Frisbee("blue")
 
     print(dude)
     dude.bark()
     dude.catch(blue_frisbee)
-    dude.bark()
-    print(dude)
     frisbee = dude.give()
-    print(frisbee)
+    dude.bark()
+    print(blue_frisbee)
     print(dude)
 
 # main
